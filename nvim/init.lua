@@ -1,0 +1,1 @@
+print('NeoVim config loaded')
