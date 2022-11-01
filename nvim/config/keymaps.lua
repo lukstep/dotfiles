@@ -12,6 +12,12 @@ keymap("n", "<leader>cp", ":let @+ = expand('%:p')<CR>")    -- Copy path to file
 keymap("n", "dw", 'vb"_d')                                  -- Delete word backwards
 keymap("n", "<C-a>", 'gg<S-v>G')                            -- Select all
 
+-- TELESCOPE
+keymap("n", "<c-p>", "<cmd>Telescope find_files<cr>")       -- Find files
+keymap("n", "<c-F>", "<cmd>Telescope grep_string<cr>")      -- Find all
+keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>")   -- Live grep
+keymap("n", "<leader>t", "<cmd>Telescope buffers<cr>")      -- Switch buffers
+
 -- VISULA MODE
 keymap("v", "c", "y")                                       -- Copy
 keymap("v", "x", "d")                                       -- Cut
