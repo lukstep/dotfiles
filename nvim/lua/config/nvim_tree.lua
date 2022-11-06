@@ -13,12 +13,13 @@ nvim_tree.setup({
     hijack_netrw = true,
     open_on_setup = false,
     open_on_tab = false,
-    hijack_cursor = false,
+    hijack_cursor = true,
     update_cwd = true,
     renderer = {
         highlight_git = false,
         root_folder_modifier = ":t",
         icons = {
+            git_placement = "after",
             glyphs = {
                 default = "",
                 symlink = "",

@@ -32,7 +32,17 @@ keymap("n", "<leader>0", "<Cmd>BufferLineGoToBuffer 10<CR>") --Go to buffer 9
 keymap("n", "<leader>nn", "<cmd>BufferLineCycleNext<cr>")
 keymap("n", "<leader>pp", "<cmd>BufferLineCyclePrev<cr>")
 
+-- NVIM-TREE
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
+
+-- GIT
+keymap('n', 'cc', '<Plug>(git-conflict-ours)')              -- Conflict, get current
+keymap('n', 'ci', '<Plug>(git-conflict-theirs)')            -- Conflict, get inclomming
+keymap('n', 'cb', '<Plug>(git-conflict-both)')              -- Conflict, get both
+keymap('n', 'c0', '<Plug>(git-conflict-none)')              -- Conflict, get none
+keymap('n', ']x', '<Plug>(git-conflict-prev-conflict)')     -- Go to prev conflict
+keymap('n', '[x', '<Plug>(git-conflict-next-conflict)')     -- Go to next conflict
+keymap('n', "<leader>gc", "<cmd>GitConflictListQf<cr>")     -- Show all conflicts
 
 -- VISULA MODE
 keymap("v", "c", "y")                                       -- Copy
