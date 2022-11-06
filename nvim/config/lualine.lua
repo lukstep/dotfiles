@@ -44,7 +44,9 @@ lualine.setup({
         theme = "one_monokai",
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
-        disable_filetypes = {},
+        disable_filetypes = {
+            'NVimTree',
+        },
         always_divide_middle = true,
     },
     sections = {
@@ -62,6 +64,7 @@ lualine.setup({
         lualine_x = {},
         lualine_y = {},
         lualine_z = { "location", "progress" },
-    }
+    },
+    extensions = {'nvim-tree'}
 
 })

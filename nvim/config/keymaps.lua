@@ -32,6 +32,8 @@ keymap("n", "<leader>0", "<Cmd>BufferLineGoToBuffer 10<CR>") --Go to buffer 9
 keymap("n", "<leader>nn", "<cmd>BufferLineCycleNext<cr>")
 keymap("n", "<leader>pp", "<cmd>BufferLineCyclePrev<cr>")
 
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
+
 -- VISULA MODE
 keymap("v", "c", "y")                                       -- Copy
 keymap("v", "x", "d")                                       -- Cut

@@ -5,4 +5,4 @@ require('./config/colorscheme')
 require('./config/lualine')
 require('./config/telescope')
 require('./config/bufferline')
-
+require('./config/nvim_tree')
