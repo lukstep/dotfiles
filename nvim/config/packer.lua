@@ -40,8 +40,9 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-    use "theniceboy/nvim-deus"
-    
+    -- Colors
+    use "cpea2506/one_monokai.nvim"
+
     use { 'nvim-lualine/lualine.nvim', requires = { 
           'kyazdani42/nvim-web-devicons', opt = true }
     }
