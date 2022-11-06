@@ -16,7 +16,7 @@ telescope.setup({
         layout_config = {
             vertical = { mirror = false },
             width = 0.8,
-            height = 0.80,
+            height = 0.9,
             preview_cutoff = 1,
             },
         border = true,
