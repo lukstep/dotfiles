@@ -1,5 +1,6 @@
 require('config.base')
 require('config.keymaps')
+require('config.notify')
 require('config.packer')
 require('config.colorscheme')
 require('config.lualine')

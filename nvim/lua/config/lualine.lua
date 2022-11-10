@@ -1,6 +1,6 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
-    vim.notify("Lualine not found!")   
+    vim.notify("Lualine not found!", "error", { title = "Start-up" })  
     return
 end
 

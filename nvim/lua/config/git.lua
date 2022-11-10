@@ -1,5 +1,6 @@
 local status_ok, gitsigns = pcall(require, "gitsigns")
-if not status_ok then
+if not status_ok then   
+    vim.notify("Gitsigns not found!", "error", { title = "Start-up" })
     return
 end
 
@@ -70,6 +71,7 @@ gitsigns.setup {
 
 local status_ok, git_conflict = pcall(require, "git-conflict")
 if not status_ok then
+    vim.notify("Git-conflict not found!", "error", { title = "Start-up" })
     return
 end
 
