@@ -1,6 +1,6 @@
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
-    vim.notify("Nvim-tree not found!", "error", { title = "Start-up" })
+    vim.notify("Telescope not found!", "error", { title = "Start-up" })
     return
 end
 
@@ -70,4 +70,3 @@ nvim_tree.setup({
         number = false,
     }
 })
-     

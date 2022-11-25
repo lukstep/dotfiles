@@ -1,6 +1,6 @@
 local fn = vim.fn
 
--- Automatically install packer
+-- Automatic"neovim/nvim-lspconfig"ally install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system {
@@ -43,23 +43,23 @@ return packer.startup(function(use)
     -- Colors
     use "cpea2506/one_monokai.nvim"
 
-    use { 'nvim-lualine/lualine.nvim', requires = { 
+    use { 'nvim-lualine/lualine.nvim', requires = {
           'kyazdani42/nvim-web-devicons', opt = true }
     }
+    use "arkav/lualine-lsp-progress"
 
-    use { 'nvim-telescope/telescope.nvim', 
+    use { 'nvim-telescope/telescope.nvim',
         tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
     use "akinsho/bufferline.nvim"
-    
-    use 'kyazdani42/nvim-web-devicons'  
+    use 'kyazdani42/nvim-web-devicons'
 
     use { 'nvim-tree/nvim-tree.lua',
         requires = { 'nvim-tree/nvim-web-devicons', -- optional, for file icons
             },
-        tag = 'nightly' 
+        tag = 'nightly'
     }
 
     use 'goolord/alpha-nvim'
@@ -71,19 +71,20 @@ return packer.startup(function(use)
 
 
     -- LSP
-    use { 
+    use {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
             "neovim/nvim-lspconfig"
 
         }
-    use "saadparwaiz1/cmp_luasnip"      -- snppet completions
+    use "saadparwaiz1/cmp_luasnip"
     use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-nvim-lsp" 
+    use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-path"
-    use "L3MON4D3/LuaSnip"              --snippet engine
-    use "rafamadriz/friendly-snippets"  -- a bunch of snippets to use 
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
+    use "nvim-treesitter/nvim-treesitter"
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then

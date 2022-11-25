@@ -1,42 +1,47 @@
 local status_ok, gitsigns = pcall(require, "gitsigns")
-if not status_ok then   
+if not status_ok then
     vim.notify("Gitsigns not found!", "error", { title = "Start-up" })
     return
 end
 
 gitsigns.setup {
     signs = {
-        add = { 
-            hl = "GitSignsAdd", 
-            text = "▎", 
-            numhl = "GitSignsAddNr", 
-            linehl = "GitSignsAddLn" 
+        add = {
+            hl = "GitSignsAdd",
+            text = "▎",
+            numhl = "GitSignsAddNr",
+            linehl = "GitSignsAddLn"
         },
-        change = { 
-            hl = "GitSignsChange", 
-            text = "▎", 
-            numhl = "GitSignsChangeNr", 
+        change = {
+            hl = "GitSignsChange",
+            text = "▎",
+            numhl = "GitSignsChangeNr",
             linehl = "GitSignsChangeLn" },
-        delete = { 
-            hl = "GitSignsDelete", 
-            text = "契", 
-            numhl = "GitSignsDeleteNr", 
+        delete = {
+            hl = "GitSignsDelete",
+            text = "契",
+            numhl = "GitSignsDeleteNr",
             linehl = "GitSignsDeleteLn" },
-        topdelete = { 
-            hl = "GitSignsDelete", 
-            text = "契", 
-            numhl = "GitSignsDeleteNr", 
+        topdelete = {
+            hl = "GitSignsDelete",
+            text = "契",
+            numhl = "GitSignsDeleteNr",
             linehl = "GitSignsDeleteLn" },
-        changedelete = { 
-            hl = "GitSignsChange", 
-            text = "▎", 
-            numhl = "GitSignsChangeNr", 
+        changedelete = {
+            hl = "GitSignsChange",
+            text = "▎",
+            numhl = "GitSignsChangeNr",
             linehl = "GitSignsChangeLn" },
+        untracked = {
+            hl = 'GitSignsAdd',
+            text = '┆',
+            numhl='GitSignsAddNr',
+            linehl='GitSignsAddLn'},
     },
-    signcolumn = true,   
-    numhl = true,        
-    linehl = false,       
-    word_diff = false,    
+    signcolumn = true,
+    numhl = true,
+    linehl = false,
+    word_diff = false,
     watch_gitdir = {
         interval = 1000,
         follow_files = true,

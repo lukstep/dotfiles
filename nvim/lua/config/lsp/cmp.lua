@@ -122,6 +122,7 @@ cmp.setup {
         },
         completion = {
             border = border_thin,
+            scrollbar = '║',
             winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
         }
     },

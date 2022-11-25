@@ -10,10 +10,10 @@ bufferline.setup {
         sort_by = "insert_afer_current",
         close_command = "Bdelete! %d",
         right_mouse_command = "Bdelete! %d",
-        left_mouse_command = "buffer %d", 
-        middle_mouse_command = nil, 
+        left_mouse_command = "buffer %d",
+        middle_mouse_command = nil,
         indicator = {
-            style = 'underline',
+            style = 'thic',
         },
         hover = {
             enabled = true,
@@ -26,7 +26,7 @@ bufferline.setup {
         right_trunc_marker = "",
         max_name_length = 30,
         max_prefix_length = 30,
-        diagnostics = false, 
+        diagnostics = false,
         diagnostics_update_in_insert = false,
         offsets = {{
             filetype = "NvimTree",
@@ -40,7 +40,7 @@ bufferline.setup {
         show_buffer_close_icons = true,
         show_close_icon = false,
         show_tab_indicators = true,
-        persist_buffer_sort = true, 
+        persist_buffer_sort = true,
         separator_style = "thick",
         enforce_regular_tabs = true,
         always_show_bufferline = true,

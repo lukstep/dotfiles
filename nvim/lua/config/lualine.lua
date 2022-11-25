@@ -1,6 +1,6 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
-    vim.notify("Lualine not found!", "error", { title = "Start-up" })  
+    vim.notify("Lualine not found!", "error", { title = "Start-up" })
     return
 end
 
@@ -8,8 +8,8 @@ local diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
     sections = { "error", "warn" },
-    symbols = { 
-        error = " ", 
+    symbols = {
+        error = " ",
         warn = " " },
     colored = false,
     update_in_insert = false,
