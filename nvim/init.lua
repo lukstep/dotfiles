@@ -9,3 +9,5 @@ require('config.bufferline')
 require('config.nvim_tree')
 require('config.alpha')
 require('config.git')
+
+require('config.lsp')
