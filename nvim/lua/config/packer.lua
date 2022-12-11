@@ -42,34 +42,29 @@ packer.init {
 return packer.startup(function(use)
     -- Colors
     use "cpea2506/one_monokai.nvim"
-
     use { 'nvim-lualine/lualine.nvim', requires = {
           'kyazdani42/nvim-web-devicons', opt = true }
     }
-    use "arkav/lualine-lsp-progress"
 
+    -- IDE
     use { 'nvim-telescope/telescope.nvim',
         tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
     use "akinsho/bufferline.nvim"
     use 'kyazdani42/nvim-web-devicons'
-
     use { 'nvim-tree/nvim-tree.lua',
         requires = { 'nvim-tree/nvim-web-devicons', -- optional, for file icons
             },
         tag = 'nightly'
     }
-
     use 'goolord/alpha-nvim'
+    use "rcarriga/nvim-notify"
     use "numToStr/Comment.nvim"
 
+    -- GIT 
     use "lewis6991/gitsigns.nvim"
     use 'akinsho/git-conflict.nvim'
-
-    use "rcarriga/nvim-notify"
-
 
     -- LSP
     use {

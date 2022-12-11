@@ -21,7 +21,7 @@ telescope.setup({
             preview_cutoff = 1,
             },
         border = true,
-        path_display = { "smart" },
+        path_display = { "truncate" },
         mappings = {
             i = { ["<esc>"] = actions.close },
             n = { ["<esc>"] = actions.close }

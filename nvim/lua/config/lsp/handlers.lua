@@ -74,10 +74,11 @@ local function lsp_keymaps()
     vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, {buffer = 0})
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, {buffer = 0})
     vim.keymap.set("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer = 0})
-    vim.keymap.set("n", "<leader>nn", "<cmd>lua vim.lsp.buf.rename()<cr>", {buffer = 0})
+    vim.keymap.set("n", "<leader>nm", "<cmd>lua vim.lsp.buf.rename()<cr>", {buffer = 0})
     vim.keymap.set("n", "gl", "<cmd> lua vim.diagnostic.open_float()<cr>", {buffer = 0})
-    vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", {buffer = 0})
-    vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {buffer = 0})
+    vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", {buffer = 0})
+    vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", {buffer = 0})
+    vim.keymap.set("n", "<leader>F", "<cmd>lua vim.lsp.buf.format<cr>", {buffer = 0})
     vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 

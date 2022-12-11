@@ -27,7 +27,6 @@ mason_lspconfig.setup({
     }
 })
 
-
 mason_lspconfig.setup_handlers({
     function(server_name)
         local server_config_path = "config.lsp.servers." .. server_name
