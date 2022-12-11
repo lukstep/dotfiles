@@ -6,3 +6,4 @@ end
 require("config.lsp.mason")
 require("config.lsp.handlers").setup()
 require("config.lsp.cmp")
+require("config.lsp.null_ls")
