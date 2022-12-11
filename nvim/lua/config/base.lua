@@ -3,7 +3,6 @@ local options = {
     background = 'dark',
     backspace = 'start,eol,indent',
     clipboard = 'unnamedplus',                  -- Allow Nvim to use system clipboard  
-    cmdheight = 0,                              -- Height of nvim command line
     completeopt = { "menu", "noselect" },       -- For CMP 
     conceallevel = 0,                           -- So that `` is visible in Markdown files
     cursorline = true,                          -- Highlight the current line 
