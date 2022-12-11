@@ -63,6 +63,7 @@ return packer.startup(function(use)
     }
 
     use 'goolord/alpha-nvim'
+    use "numToStr/Comment.nvim"
 
     use "lewis6991/gitsigns.nvim"
     use 'akinsho/git-conflict.nvim'
