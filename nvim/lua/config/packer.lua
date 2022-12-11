@@ -61,6 +61,7 @@ return packer.startup(function(use)
     use 'goolord/alpha-nvim'
     use "rcarriga/nvim-notify"
     use "numToStr/Comment.nvim"
+    use 'arkav/lualine-lsp-progress'
 
     -- GIT 
     use "lewis6991/gitsigns.nvim"
@@ -70,8 +71,8 @@ return packer.startup(function(use)
     use {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-            "neovim/nvim-lspconfig"
-
+            "neovim/nvim-lspconfig",
+            "glepnir/lspsaga.nvim"
         }
     use "saadparwaiz1/cmp_luasnip"
     use "hrsh7th/nvim-cmp"

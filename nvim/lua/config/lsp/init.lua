@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 require("config.lsp.mason")
+require("config.lsp.lspsaga")
 require("config.lsp.handlers").setup()
 require("config.lsp.cmp")
 require("config.lsp.null_ls")
