@@ -50,6 +50,8 @@ keymap('n', 'c0', '<Plug>(git-conflict-none)')              -- Conflict, get non
 keymap('n', ']x', '<Plug>(git-conflict-prev-conflict)')     -- Go to prev conflict
 keymap('n', '[x', '<Plug>(git-conflict-next-conflict)')     -- Go to next conflict
 keymap('n', "<leader>gc", "<cmd>GitConflictListQf<cr>")     -- Show all conflicts
+keymap('n', "<leader>gs", "<cmd>Telescope git_status<cr>")  -- Show git status
+
 
 -- INSERT MODE
 keymap("i", "jk", "<ESC>")
