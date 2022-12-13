@@ -34,6 +34,14 @@ local inactive_path = {
     path = 2
 }
 
+local lsp = function()
+    local names = {}
+    for i, lsp_server in pairs(vim.lsp.buf_get_clients(0)) do
+        table.insert(names, lsp_server.name)
+    end
+    return "LSP  [" .. table.concat(names, " ") .. "]"
+end
+
 local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
@@ -52,8 +60,8 @@ lualine.setup({
     sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch", diff },
-        lualine_c = { diagnostics },
-        lualine_x = { filetype },
+        lualine_c = { diagnostics},
+        lualine_x = { lsp, filetype },
         lualine_y = { spaces, "encoding", "fileformat" },
         lualine_z = { "location", "progress" },
     },
