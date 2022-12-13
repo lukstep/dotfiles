@@ -42,30 +42,31 @@ packer.init {
 return packer.startup(function(use)
     -- Colors
     use "cpea2506/one_monokai.nvim"
-    use { 'nvim-lualine/lualine.nvim', requires = {
-          'kyazdani42/nvim-web-devicons', opt = true }
-    }
 
     -- IDE
-    use { 'nvim-telescope/telescope.nvim',
+    use {
+        'nvim-telescope/telescope.nvim',
         tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use "akinsho/bufferline.nvim"
-    use 'kyazdani42/nvim-web-devicons'
-    use { 'nvim-tree/nvim-tree.lua',
-        requires = { 'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    use "kyazdani42/nvim-web-devicons"
+    use {
+            "nvim-tree/nvim-tree.lua",
+            requires = {
+                "nvim-tree/nvim-web-devicons",
             },
-        tag = 'nightly'
+            tag = "nightly"
     }
-    use 'goolord/alpha-nvim'
+    use "goolord/alpha-nvim"
     use "rcarriga/nvim-notify"
     use "numToStr/Comment.nvim"
-    use 'arkav/lualine-lsp-progress'
+    use "arkav/lualine-lsp-progress"
+    use "nvim-lualine/lualine.nvim"
 
     -- GIT 
     use "lewis6991/gitsigns.nvim"
-    use 'akinsho/git-conflict.nvim'
+    use "akinsho/git-conflict.nvim"
 
     -- LSP
     use {
@@ -83,6 +84,7 @@ return packer.startup(function(use)
     use "rafamadriz/friendly-snippets"
     use "nvim-treesitter/nvim-treesitter"
     use "jose-elias-alvarez/null-ls.nvim"
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
