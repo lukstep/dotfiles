@@ -84,7 +84,7 @@ return packer.startup(function(use)
     use "rafamadriz/friendly-snippets"
     use "nvim-treesitter/nvim-treesitter"
     use "jose-elias-alvarez/null-ls.nvim"
-
+    use "windwp/nvim-autopairs"
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
