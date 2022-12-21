@@ -11,6 +11,7 @@ keymap("n", "-", "<C-x>")                                   -- Decrement number
 keymap("n", "<leader>cp", ":let @+ = expand('%:p')<CR>")    -- Copy path to file
 keymap("n", "dw", 'vb"_d')                                  -- Delete word backwards
 keymap("n", "<C-a>", 'gg<S-v>G')                            -- Select all
+keymap("n", "<leader>q", '<CMD>BDelete this<cr>')
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h")

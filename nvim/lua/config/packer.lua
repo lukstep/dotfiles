@@ -50,6 +50,7 @@ return packer.startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use "akinsho/bufferline.nvim"
+    use 'kazhala/close-buffers.nvim'
     use "kyazdani42/nvim-web-devicons"
     use {
             "nvim-tree/nvim-tree.lua",
