@@ -4,5 +4,5 @@ if not status_ok then
 end
 
 lspsaga.init_lsp_saga({
-
+    code_action_icon = "",
 })
