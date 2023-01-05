@@ -47,7 +47,8 @@ return packer.startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { {'nvim-lua/plenary.nvim',
+                      'nvim-telescope/telescope-live-grep-args.nvim' } },
     }
     use "akinsho/bufferline.nvim"
     use 'kazhala/close-buffers.nvim'

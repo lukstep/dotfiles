@@ -22,7 +22,7 @@ keymap("n", "<C-l>", "<C-w>l")
 -- TELESCOPE
 keymap("n", "<c-p>", "<cmd>Telescope find_files<cr>")       -- Find files
 keymap("n", "<c-F>", "<cmd>Telescope grep_string<cr>")      -- Find all
-keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>")   -- Live grep
+keymap("n", "<leader>lg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>")   -- Live grep
 keymap("n", "<leader>t", "<cmd>Telescope buffers<cr>")      -- Switch buffers
 keymap("n",  "<C-n>", "<cmd>:lua require('telescope.builtin').current_buffer_fuzzy_find({default_text=vim.fn.expand('<cword>')})<cr>")
 
