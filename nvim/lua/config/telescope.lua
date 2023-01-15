@@ -4,7 +4,10 @@ if not present then
     return
 end
 
+require("telescope").load_extension("live_grep_args")
+
 local actions = require("telescope.actions")
+local lga_actions = require("telescope-live-grep-args.actions")
 
 telescope.setup({
     defaults = {
@@ -39,7 +42,18 @@ telescope.setup({
                 theme = "dropdown",
                 previewer = false,
             }
+        },
+        extensions = {
+            live_grep_args = {
+                auto_quoting = true, -- enable/disable auto-quoting
+                -- define mappings, e.g.
+                mappings = { -- extend mappings
+                    i = {
+                        ["<C-k>"] = lga_actions.quote_prompt(),
+                        ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                    },
+                },
+            },
         }
 })
 
-require("telescope").load_extension("live_grep_args")
