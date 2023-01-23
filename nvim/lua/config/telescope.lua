@@ -8,6 +8,23 @@ require("telescope").load_extension("live_grep_args")
 
 local actions = require("telescope.actions")
 local lga_actions = require("telescope-live-grep-args.actions")
+local action_state = require("telescope.actions.state")
+
+local custom_actions = {}
+
+function custom_actions.fzf_multi_select(prompt_bufnr)
+    local picker = action_state.get_current_picker(prompt_bufnr)
+    local num_selections = table.getn(picker:get_multi_selection())
+
+    if num_selections > 1 then
+        -- actions.file_edit throws - context of picker seems to change
+        --actions.file_edit(prompt_bufnr)
+        actions.send_selected_to_qflist(prompt_bufnr)
+        actions.open_qflist()
+    else
+        actions.file_edit(prompt_bufnr)
+    end
+end
 
 telescope.setup({
     defaults = {
@@ -26,9 +43,15 @@ telescope.setup({
         border = true,
         path_display = { "truncate" },
         mappings = {
-            i = { ["<esc>"] = actions.close },
-            n = { ["<esc>"] = actions.close }
+            i = {
+                ["<esc>"] = actions.close,
+                ["<cr>"] = custom_actions.fzf_multi_select
+            },
+            n = {
+                ["<esc>"] = actions.close,
+                ["<cr>"] = custom_actions.fzf_multi_select
             }
+        }
         },
         pickers = {
             buffers = {
