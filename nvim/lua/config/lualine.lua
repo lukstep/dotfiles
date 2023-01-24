@@ -34,6 +34,12 @@ local inactive_path = {
     path = 2
 }
 
+local path = {
+    "filename",
+    file_status = true,
+    path = 1
+}
+
 local lsp = function()
     local names = {}
     for i, lsp_server in pairs(vim.lsp.buf_get_clients(0)) do
@@ -59,8 +65,8 @@ lualine.setup({
     },
     sections = {
         lualine_a = { "mode" },
-        lualine_b = { "branch", diff },
-        lualine_c = { diagnostics},
+        lualine_b = { "branch", diff, diagnostics },
+        lualine_c = { path },
         lualine_x = { lsp, filetype },
         lualine_y = { spaces, "encoding", "fileformat" },
         lualine_z = { "location", "progress" },
