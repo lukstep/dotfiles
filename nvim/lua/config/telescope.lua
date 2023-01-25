@@ -61,7 +61,7 @@ telescope.setup({
                 sort_mru = true,
             },
             find_files = {
-                find_command = { 'rg', '--hidden', '--files' },
+                -- find_command = { 'rg', '--hidden', '--files' },
                 theme = "dropdown",
                 previewer = false,
             }
