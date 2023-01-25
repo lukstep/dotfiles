@@ -7,6 +7,6 @@ if not is_colorscheme_avaiable then
 end
 
 require("one_monokai").setup({
-    use_cmd = false
+    transparent = true,
 })
 
