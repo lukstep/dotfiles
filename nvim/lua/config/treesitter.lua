@@ -28,14 +28,7 @@ treesitter.setup({
     },
     auto_install = true,
     highlight = {
-        disable = function(lang, buf)
-            local max_filesize = 300 * 1024 -- 300 KB
-            local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-            if ok and stats and stats.size > max_filesize then
-                return true
-            end
-        end,
-    aditional_vim_regex_highlighting = false,
+        enable = true,
     },
     indent = { enable = false, disable = { "" } },
     context_commentstring = {
