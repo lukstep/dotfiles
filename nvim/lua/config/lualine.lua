@@ -16,6 +16,9 @@ local diagnostics = {
     always_visible = false,
 }
 
+local modified_icon = "●"
+local readonly_icon = ""
+
 local diff = {
 	"diff",
 	colored = false,
@@ -31,13 +34,26 @@ local filetype = {
 local inactive_path = {
     "filename",
     file_status = true,
-    path = 2
+    path = 2,
+    symbols = {
+        modified = modified_icon,
+        readonly = readonly_icon,
+        unnamed = "",
+        newfile = "",
+    }
 }
 
 local path = {
     "filename",
     file_status = true,
-    path = 1
+    newfile_status = false,
+    path = 1,
+    symbols = {
+        modified = modified_icon,
+        readonly = readonly_icon,
+        unnamed = "",
+        newfile = ""
+    }
 }
 
 local lsp = function()
@@ -45,7 +61,7 @@ local lsp = function()
     for i, lsp_server in pairs(vim.lsp.buf_get_clients(0)) do
         table.insert(names, lsp_server.name)
     end
-    return "LSP  [" .. table.concat(names, " ") .. "]"
+    return "LSP [" .. table.concat(names, " ") .. "]"
 end
 
 local spaces = function()
