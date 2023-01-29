@@ -5,7 +5,13 @@ if not status_ok then
 end
 
 toggleterm.setup({
-	-- size = 100,
+	size = function(term)
+        if term.direction == "horizontal" then
+            return vim.o.lines * 0.5
+        elseif term.direction == "vertical" then
+            return vim.o.columns * 0.4
+        end
+    end,
 	open_mapping = [[<c-\>]],
 	hide_numbers = true,
 	shade_filetypes = {},
@@ -14,7 +20,7 @@ toggleterm.setup({
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
-	direction = "float",
+	direction = "horizontal",
 	close_on_exit = true,
 	shell = vim.o.shell,
 	float_opts = {
