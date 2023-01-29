@@ -66,6 +66,7 @@ return packer.startup(function(use)
     use "arkav/lualine-lsp-progress"
     use "nvim-lualine/lualine.nvim"
     use "akinsho/toggleterm.nvim"
+    use "nvim-zh/colorful-winsep.nvim"
 
     -- GIT 
     use "lewis6991/gitsigns.nvim"
