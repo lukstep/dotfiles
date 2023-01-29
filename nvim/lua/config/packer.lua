@@ -65,6 +65,7 @@ return packer.startup(function(use)
     use "numToStr/Comment.nvim"
     use "arkav/lualine-lsp-progress"
     use "nvim-lualine/lualine.nvim"
+    use "akinsho/toggleterm.nvim"
 
     -- GIT 
     use "lewis6991/gitsigns.nvim"

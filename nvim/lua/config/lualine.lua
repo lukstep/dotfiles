@@ -95,6 +95,6 @@ lualine.setup({
         lualine_y = {},
         lualine_z = { "location", "progress" },
     },
-    extensions = {'nvim-tree'}
+    extensions = {'nvim-tree', "toggleterm", "quickfix"}
 
 })

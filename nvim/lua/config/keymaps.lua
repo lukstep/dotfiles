@@ -26,6 +26,17 @@ keymap("n", "<leader>lg", ":lua require('telescope').extensions.live_grep_args.l
 keymap("n", "<leader>t", "<cmd>Telescope buffers<cr>")      -- Switch buffers
 keymap("n",  "<C-n>", "<cmd>:lua require('telescope.builtin').current_buffer_fuzzy_find({default_text=vim.fn.expand('<cword>')})<cr>")
 
+-- TERMINAL
+function _G.set_terminal_keymaps()
+  keymap('t', '<esc>', [[<C-\><C-n>]])                      -- Exit insert mode in terminal
+  keymap('t', 'jk', [[<C-\><C-n>]])                         -- Exit insert mode in terminal
+  keymap('t', '<C-h>', [[<C-\><C-n><C-W>h]])
+  keymap('t', '<C-j>', [[<C-\><C-n><C-W>j]])
+  keymap('t', '<C-k>', [[<C-\><C-n><C-W>k]])
+  keymap('t', '<C-l>', [[<C-\><C-n><C-W>l]])
+end
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
 -- BUFFERLINE
 keymap("n", "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>")  --Go to buffer 1
 keymap("n", "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>")  --Go to buffer 2
