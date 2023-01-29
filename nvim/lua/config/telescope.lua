@@ -17,12 +17,11 @@ function custom_actions.fzf_multi_select(prompt_bufnr)
     local num_selections = table.getn(picker:get_multi_selection())
 
     if num_selections > 1 then
-        -- actions.file_edit throws - context of picker seems to change
-        --actions.file_edit(prompt_bufnr)
         actions.send_selected_to_qflist(prompt_bufnr)
         actions.open_qflist()
     else
-        actions.file_edit(prompt_bufnr)
+        actions.send_to_qflist(prompt_bufnr)
+        actions.open_qflist()
     end
 end
 
@@ -45,11 +44,11 @@ telescope.setup({
         mappings = {
             i = {
                 ["<esc>"] = actions.close,
-                ["<cr>"] = custom_actions.fzf_multi_select
+                ["<c-q>"] = custom_actions.fzf_multi_select
             },
             n = {
                 ["<esc>"] = actions.close,
-                ["<cr>"] = custom_actions.fzf_multi_select
+                ["<c-q>"] = custom_actions.fzf_multi_select
             }
         }
         },
