@@ -37,19 +37,15 @@ function _G.set_terminal_keymaps()
 end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
--- BUFFERLINE
-keymap("n", "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>")  --Go to buffer 1
-keymap("n", "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>")  --Go to buffer 2
-keymap("n", "<leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>")  --Go to buffer 3
-keymap("n", "<leader>4", "<Cmd>BufferLineGoToBuffer 4<CR>")  --Go to buffer 4
-keymap("n", "<leader>5", "<Cmd>BufferLineGoToBuffer 5<CR>")  --Go to buffer 5
-keymap("n", "<leader>6", "<Cmd>BufferLineGoToBuffer 6<CR>")  --Go to buffer 6
-keymap("n", "<leader>7", "<Cmd>BufferLineGoToBuffer 7<CR>")  --Go to buffer 7
-keymap("n", "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>")  --Go to buffer 8
-keymap("n", "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>")  --Go to buffer 9
-keymap("n", "<leader>0", "<Cmd>BufferLineGoToBuffer 10<CR>") --Go to buffer 9
-keymap("n", "<leader>nn", "<cmd>BufferLineCycleNext<cr>")
-keymap("n", "<leader>pp", "<cmd>BufferLineCyclePrev<cr>")
+-- COKELINE
+keymap('n', '<S-Tab>',   '<Plug>(cokeline-focus-prev)')
+keymap('n', '<Tab>',     '<Plug>(cokeline-focus-next)')
+keymap('n', '<Leader>p', '<Plug>(cokeline-switch-prev)')
+keymap('n', '<Leader>n', '<Plug>(cokeline-switch-next)')
+for i = 1,9 do
+  keymap('n', ('<Leader>%s'):format(i), ('<Plug>(cokeline-focus-%s)'):format(i))
+end
+keymap('n', ('<Leader>0'), ('<Plug>(cokeline-focus-10)'))
 
 -- NVIM-TREE
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")

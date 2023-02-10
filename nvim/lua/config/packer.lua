@@ -50,7 +50,7 @@ return packer.startup(function(use)
         requires = { {'nvim-lua/plenary.nvim',
                       'nvim-telescope/telescope-live-grep-args.nvim' } },
     }
-    use "akinsho/bufferline.nvim"
+    use "noib3/nvim-cokeline"
     use 'kazhala/close-buffers.nvim'
     use "kyazdani42/nvim-web-devicons"
     use {
