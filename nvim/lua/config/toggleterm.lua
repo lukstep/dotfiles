@@ -17,7 +17,7 @@ toggleterm.setup({
 	shade_filetypes = {},
 	shade_terminals = true,
 	shading_factor = 40,
-	start_in_insert = true,
+	start_in_insert = false,
 	insert_mappings = true,
 	persist_size = true,
 	direction = "horizontal",
