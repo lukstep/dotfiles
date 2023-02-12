@@ -23,7 +23,6 @@ mason_lspconfig.setup({
         "clangd",
         "cmake",
         "pylsp",
-        "sumneko_lua"
     }
 })
 
