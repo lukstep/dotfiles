@@ -48,6 +48,7 @@ return packer.startup(function(use)
         'nvim-telescope/telescope.nvim',
         tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim',
+                      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
                       'nvim-telescope/telescope-live-grep-args.nvim' } },
     }
     use "noib3/nvim-cokeline"

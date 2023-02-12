@@ -5,6 +5,7 @@ if not present then
 end
 
 require("telescope").load_extension("live_grep_args")
+require("telescope").load_extension("fzf")
 
 local actions = require("telescope.actions")
 local lga_actions = require("telescope-live-grep-args.actions")
@@ -44,11 +45,15 @@ telescope.setup({
         mappings = {
             i = {
                 ["<esc>"] = actions.close,
-                ["<c-q>"] = custom_actions.fzf_multi_select
+                ["<c-q>"] = custom_actions.fzf_multi_select,
+                ["<c-j>"] = actions.cycle_history_prev,
+                ["<c-k>"] = actions.cycle_history_next,
             },
             n = {
                 ["<esc>"] = actions.close,
-                ["<c-q>"] = custom_actions.fzf_multi_select
+                ["<c-q>"] = custom_actions.fzf_multi_select,
+                ["<c-j>"] = actions.cycle_history_prev,
+                ["<c-k>"] = actions.cycle_history_next,
             }
         }
         },
