@@ -56,15 +56,15 @@ cokeline.setup(
                 return buffer.filename
             end,
             fg = function(buffer)
-                if buffer.is_focused then
-                    return "#88B966"
-                end
                 if buffer.is_modified then
                     return "#e5c463"
                 end
-                -- if buffer.lsp.errors ~= 0 then
-                --     return "#fc5d7c"
-                -- end
+                if buffer.diagnostics.errors ~= 0 then
+                    return "#fc5d7c"
+                end
+                if buffer.is_focused then
+                    return "#88B966"
+                end
             end,
             style = function(buffer)
                 if buffer.is_focused then
