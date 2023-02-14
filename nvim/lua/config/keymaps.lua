@@ -36,6 +36,8 @@ function _G.set_terminal_keymaps()
   keymap('t', '<C-l>', [[<C-\><C-n><C-W>l]])
 end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+keymap("n", "<leader>tg", "<cmd>lua _TIG_TOGGLE()<cr>")
+keymap("n", "<leader>py", "<cmd>lua _PYTHON_TOGGLE()<cr>")
 
 -- COKELINE
 keymap('n', '<S-Tab>',   '<Plug>(cokeline-focus-prev)')

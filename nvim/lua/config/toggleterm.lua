@@ -32,3 +32,15 @@ toggleterm.setup({
 		},
 	},
 })
+
+local Terminal = require("toggleterm.terminal").Terminal
+
+local tig = Terminal:new({ cmd = "tig", hidden = true, direction = "float", start_in_insert = true})
+function _TIG_TOGGLE()
+	tig:toggle()
+end
+
+local python = Terminal:new({ cmd = "python3", hidden = true, direction = "float", start_in_insert = "true"})
+function _PYTHON_TOGGLE()
+	python:toggle()
+end
