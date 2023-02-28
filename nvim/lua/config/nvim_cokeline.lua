@@ -53,7 +53,7 @@ cokeline.setup(
         },
         {
             text = function(buffer)
-                return buffer.filename
+                return buffer.unique_prefix .. buffer.filename
             end,
             fg = function(buffer)
                 if buffer.is_modified then
