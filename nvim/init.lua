@@ -1,6 +1,7 @@
 require('config.base')
 require('config.notify')
 require('config.packer')
+require('config.flatten')
 require('config.colorscheme')
 require('config.lualine')
 require('config.telescope')
