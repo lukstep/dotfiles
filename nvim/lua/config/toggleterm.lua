@@ -35,12 +35,28 @@ toggleterm.setup({
 
 local Terminal = require("toggleterm.terminal").Terminal
 
-local tig = Terminal:new({ cmd = "tig", hidden = true, direction = "float", start_in_insert = true})
+local tig = Terminal:new({
+    cmd = "tig",
+    hidden = true,
+    direction = "float",
+    close_on_exit = true,
+    on_open = function(term)
+        vim.cmd("startinsert!")
+    end,
+})
 function _TIG_TOGGLE()
 	tig:toggle()
 end
 
-local python = Terminal:new({ cmd = "python3", hidden = true, direction = "float", start_in_insert = "true"})
+local python = Terminal:new({
+    cmd = "python3",
+    hidden = true,
+    direction = "float",
+    close_on_exit = true,
+    on_open = function(term)
+        vim.cmd("startinsert!")
+    end,
+})
 function _PYTHON_TOGGLE()
 	python:toggle()
 end
