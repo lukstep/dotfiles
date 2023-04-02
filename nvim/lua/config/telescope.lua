@@ -68,19 +68,54 @@ telescope.setup({
                 -- find_command = { 'rg', '--hidden', '--files' },
                 theme = "dropdown",
                 previewer = false,
-            }
+            },
+            -- git_status = {
+            --     cwd = "git status -z -- . --untracked-files=no"
+            -- },
         },
         extensions = {
             live_grep_args = {
-                auto_quoting = true, -- enable/disable auto-quoting
-                -- define mappings, e.g.
+                auto_quoting = true,
                 mappings = { -- extend mappings
                     i = {
-                        ["<C-k>"] = lga_actions.quote_prompt(),
-                        ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                        ["<c-k>"] = lga_actions.quote_prompt(),
+                        ["<c-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
                     },
+                    n = {
+                        ["<c-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                    }
                 },
             },
         }
 })
+
+function TelescopeFindWord(word)
+    require('telescope').extensions.live_grep_args.live_grep_args({
+        default_text = '"' .. word .. '"'})
+end
+
+function TelescopeFindWordInJava(word)
+    require('telescope').extensions.live_grep_args.live_grep_args({
+        default_text = "-t java " .. '"' .. word .. '"'})
+end
+
+function TelescopeFindInFolder(folder)
+    require('telescope').extensions.live_grep_args.live_grep_args({
+        default_text = "--iglob **/" .. folder .. "/** " .. '"' })
+end
+
+function TelescopeFindWordWitoutIgnore(word)
+    require('telescope').extensions.live_grep_args.live_grep_args({
+        default_text = " --no-ignore" .. '"' .. word .. '"'})
+end
+
+function TelescopeFindWordInTests(word)
+    require('telescope').extensions.live_grep_args.live_grep_args({
+        default_text = '"' .. word .. '"' .. " --iglob **/test/**"})
+end
+
+function TelescopeFindWordInBuild(word)
+    require('telescope').extensions.live_grep_args.live_grep_args({
+        default_text = '"' .. word .. '"' .. " ./build"})
+end
 

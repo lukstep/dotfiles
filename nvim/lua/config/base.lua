@@ -45,3 +45,21 @@ local options = {
 for key, value in  pairs(options) do
     vim.opt[key] = value
 end
+
+vim.api.nvim_create_user_command("FileName", function()
+    local path = vim.fn.expand("%:t")
+    vim.fn.setreg("+", path)
+    vim.notify('Copied "' .. path .. '"')
+end, {})
+
+vim.api.nvim_create_user_command("FileRelativePath", function()
+    local path = vim.fn.expand("%")
+    vim.fn.setreg("+", path)
+    vim.notify('Copied "' .. path .. '"')
+end, {})
+
+vim.api.nvim_create_user_command("FileAbsolutePath", function()
+    local path = vim.fn.expand("%:p")
+    vim.fn.setreg("+", path)
+    vim.notify('Copied "' .. path .. '"')
+end, {})

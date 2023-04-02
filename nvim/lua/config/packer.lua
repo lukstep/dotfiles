@@ -70,6 +70,7 @@ return packer.startup(function(use)
     use "nvim-zh/colorful-winsep.nvim"
     use "lukas-reineke/indent-blankline.nvim"
     use "willothy/flatten.nvim"
+    use "folke/which-key.nvim"
 
     -- GIT 
     use "lewis6991/gitsigns.nvim"
