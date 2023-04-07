@@ -41,13 +41,19 @@ telescope.setup({
             preview_cutoff = 1,
             },
         border = true,
-        path_display = { "truncate" },
+        -- path_display = { "truncate" },
+        path_display = function(opts, path)
+            local tail = require("telescope.utils").path_tail(path)
+            return string.format("%s (%s)", tail, path), { { { 1, #tail }, "Constant" } }
+        end,
         mappings = {
             i = {
                 ["<esc>"] = actions.close,
                 ["<c-q>"] = custom_actions.fzf_multi_select,
                 ["<c-j>"] = actions.cycle_history_prev,
                 ["<c-k>"] = actions.cycle_history_next,
+                ["<c-k>"] = lga_actions.quote_prompt(),
+                ["<c-b>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
             },
             n = {
                 ["<esc>"] = actions.close,
@@ -59,15 +65,14 @@ telescope.setup({
         },
         pickers = {
             buffers = {
-                theme = "dropdown",
-                previewer = false,
+                -- theme = "dropdown",
+                previewer = true,
                 ignore_current_buffer = true,
                 sort_mru = true,
             },
             find_files = {
-                -- find_command = { 'rg', '--hidden', '--files' },
-                theme = "dropdown",
-                previewer = false,
+                -- theme = "dropdown",
+                previewer = true,
             },
             -- git_status = {
             --     cwd = "git status -z -- . --untracked-files=no"
@@ -75,14 +80,12 @@ telescope.setup({
         },
         extensions = {
             live_grep_args = {
-                auto_quoting = true,
+                auto_quoting = false,
                 mappings = { -- extend mappings
                     i = {
-                        ["<c-k>"] = lga_actions.quote_prompt(),
-                        ["<c-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
                     },
                     n = {
-                        ["<c-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                        ["<c-b>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
                     }
                 },
             },
@@ -99,19 +102,14 @@ function TelescopeFindWordInJava(word)
         default_text = "-t java " .. '"' .. word .. '"'})
 end
 
-function TelescopeFindInFolder(folder)
+function TelescopeFindWordInFolder(word, folder)
     require('telescope').extensions.live_grep_args.live_grep_args({
-        default_text = "--iglob **/" .. folder .. "/** " .. '"' })
+        default_text = "--iglob **/" .. folder .. "/** " .. word .. '"' })
 end
 
 function TelescopeFindWordWitoutIgnore(word)
     require('telescope').extensions.live_grep_args.live_grep_args({
         default_text = " --no-ignore" .. '"' .. word .. '"'})
-end
-
-function TelescopeFindWordInTests(word)
-    require('telescope').extensions.live_grep_args.live_grep_args({
-        default_text = '"' .. word .. '"' .. " --iglob **/test/**"})
 end
 
 function TelescopeFindWordInBuild(word)

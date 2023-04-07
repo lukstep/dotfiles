@@ -36,14 +36,14 @@ wk.register({
         f = {
             name = "+Find",
             b = { "<cmd>Telescope buffers<cr>", "Find buffer" },
-            B = { "<cmd>lua TelescopeFindWordInBuild(vim.fn.expand('<cword>'))<cr>", "Find word in build dir" },
-            g = { "<cmd>lua TelescopeFindWordWitoutIgnore(vim.fn.expand('<cword>'))<cr>", "Find word in build dir" },
+            B = { "<cmd>lua TelescopeFindWordInBuild(vim.fn.expand('<cword>'))<cr>", "Find word in build" },
+            g = { "<cmd>lua TelescopeFindWordWitoutIgnore(vim.fn.expand('<cword>'))<cr>", "Find word include ignore" },
             f = { "<cmd>Telescope find_files<cr>", "Find file" },
-            F = { "<cmd>lua TelescopeFindInFolder(vim.fn.expand('<cword>'))<cr>", "Find in folder" },
+            F = { "<cmd>lua TelescopeFindWordInFolder('', vim.fn.expand('<cword>'))<cr>", "Find in folder" },
             j = { "<cmd>lua TelescopeFindWordInJava(vim.fn.expand('<cword>'))<cr>", "Find word in Java files" },
             w = { "<cmd>lua TelescopeFindWord(vim.fn.expand('<cword>'))<cr>", "Find word" },
             W = { "<cmd>:lua require('telescope.builtin').current_buffer_fuzzy_find({default_text=vim.fn.expand('<cword>')})<cr>", "Find word in file" },
-            t = { "<cmd>lua TelescopeFindWordInTests(vim.fn.expand('<cword>'))<cr>", "Find word in test" }
+            t = { "<cmd>lua TelescopeFindWordInFolder(vim.fn.expand('<cword>'), 'test*')<cr>", "Find word in test" }
 
         },
         g = {
