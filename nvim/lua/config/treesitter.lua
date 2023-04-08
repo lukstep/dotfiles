@@ -36,4 +36,3 @@ treesitter.setup({
         enable_autocmd = false
     }
 })
-

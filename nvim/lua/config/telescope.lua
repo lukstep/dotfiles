@@ -28,31 +28,31 @@ end
 
 telescope.setup({
     defaults = {
-        prompt_prefix = "  ",
+        prompt_prefix   = "  ",
         selection_caret = " ",
-        entry_prefix  = "  ",
-        multi_icon = "",
+        entry_prefix    = "  ",
+        multi_icon      = "",
         layout_strategy = "vertical",
-        sort_strategy = "ascending",
-        layout_config = {
+        sort_strategy   = "ascending",
+        layout_config   = {
             vertical = { mirror = false },
             width = 0.8,
             height = 0.9,
             preview_cutoff = 1,
-            },
-        border = true,
+        },
+        border          = true,
         -- path_display = { "truncate" },
-        path_display = function(opts, path)
+        path_display    = function(opts, path)
             local tail = require("telescope.utils").path_tail(path)
             return string.format("%s (%s)", tail, path), { { { 1, #tail }, "Constant" } }
         end,
-        mappings = {
+        mappings        = {
             i = {
                 ["<esc>"] = actions.close,
                 ["<c-q>"] = custom_actions.fzf_multi_select,
                 ["<c-j>"] = actions.cycle_history_prev,
                 ["<c-k>"] = actions.cycle_history_next,
-                ["<c-k>"] = lga_actions.quote_prompt(),
+                -- ["<c-k>"] = lga_actions.quote_prompt(),
                 ["<c-b>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
             },
             n = {
@@ -62,44 +62,45 @@ telescope.setup({
                 ["<c-k>"] = actions.cycle_history_next,
             }
         }
+    },
+    pickers = {
+        buffers = {
+            -- theme = "dropdown",
+            previewer = true,
+            ignore_current_buffer = true,
+            sort_mru = true,
         },
-        pickers = {
-            buffers = {
-                -- theme = "dropdown",
-                previewer = true,
-                ignore_current_buffer = true,
-                sort_mru = true,
-            },
-            find_files = {
-                -- theme = "dropdown",
-                previewer = true,
-            },
-            -- git_status = {
-            --     cwd = "git status -z -- . --untracked-files=no"
-            -- },
+        find_files = {
+            -- theme = "dropdown",
+            previewer = true,
         },
-        extensions = {
-            live_grep_args = {
-                auto_quoting = false,
-                mappings = { -- extend mappings
-                    i = {
-                    },
-                    n = {
-                        ["<c-b>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
-                    }
+        -- git_status = {
+        --     cwd = "git status -z -- . --untracked-files=no"
+        -- },
+    },
+    extensions = {
+        live_grep_args = {
+            auto_quoting = false,
+            mappings = {
+                             -- extend mappings
+                i = {
                 },
+                n = {
+                    ["<c-b>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                }
             },
-        }
+        },
+    }
 })
 
 function TelescopeFindWord(word)
     require('telescope').extensions.live_grep_args.live_grep_args({
-        default_text = '"' .. word .. '"'})
+        default_text = '"' .. word .. '"' })
 end
 
 function TelescopeFindWordInJava(word)
     require('telescope').extensions.live_grep_args.live_grep_args({
-        default_text = "-t java " .. '"' .. word .. '"'})
+        default_text = "-t java " .. '"' .. word .. '"' })
 end
 
 function TelescopeFindWordInFolder(word, folder)
@@ -109,11 +110,10 @@ end
 
 function TelescopeFindWordWitoutIgnore(word)
     require('telescope').extensions.live_grep_args.live_grep_args({
-        default_text = " --no-ignore" .. '"' .. word .. '"'})
+        default_text = " --no-ignore" .. '"' .. word .. '"' })
 end
 
 function TelescopeFindWordInBuild(word)
     require('telescope').extensions.live_grep_args.live_grep_args({
-        default_text = '"' .. word .. '"' .. " ./build"})
+        default_text = '"' .. word .. '"' .. " ./build" })
 end
-

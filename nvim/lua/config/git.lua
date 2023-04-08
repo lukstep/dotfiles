@@ -16,27 +16,32 @@ gitsigns.setup {
             hl = "GitSignsChange",
             text = "▎",
             numhl = "GitSignsChangeNr",
-            linehl = "GitSignsChangeLn" },
+            linehl = "GitSignsChangeLn"
+        },
         delete = {
             hl = "GitSignsDelete",
             text = "契",
             numhl = "GitSignsDeleteNr",
-            linehl = "GitSignsDeleteLn" },
+            linehl = "GitSignsDeleteLn"
+        },
         topdelete = {
             hl = "GitSignsDelete",
             text = "契",
             numhl = "GitSignsDeleteNr",
-            linehl = "GitSignsDeleteLn" },
+            linehl = "GitSignsDeleteLn"
+        },
         changedelete = {
             hl = "GitSignsChange",
             text = "▎",
             numhl = "GitSignsChangeNr",
-            linehl = "GitSignsChangeLn" },
+            linehl = "GitSignsChangeLn"
+        },
         untracked = {
             hl = 'GitSignsAdd',
             text = '┆',
-            numhl='GitSignsAddNr',
-            linehl='GitSignsAddLn'},
+            numhl = 'GitSignsAddNr',
+            linehl = 'GitSignsAddLn'
+        },
     },
     signcolumn = true,
     numhl = true,
@@ -84,5 +89,5 @@ git_conflict.setup({
     highlights = {
         incoming = 'DiffText',
         current = 'DiffLine'
-  }
+    }
 })

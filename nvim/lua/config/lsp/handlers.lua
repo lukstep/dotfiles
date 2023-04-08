@@ -1,12 +1,11 @@
-
 local handler = {}
 
 handler.setup = function()
     local signs = {
         { name = "DiagnosticSignError", text = "" },
-        { name = "DiagnosticSignWarn", text = "" },
-        { name = "DiagnosticSignHint", text = "" },
-        { name = "DiagnosticSignInfo", text = "" },
+        { name = "DiagnosticSignWarn",  text = "" },
+        { name = "DiagnosticSignHint",  text = "" },
+        { name = "DiagnosticSignInfo",  text = "" },
     }
 
     for _, sign in ipairs(signs) do
@@ -18,7 +17,7 @@ handler.setup = function()
         virtual_text = false,
         -- show signs
         signs = {
-        active = signs,
+            active = signs,
         },
         update_in_insert = true,
         underline = true,
@@ -93,10 +92,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
-  return
+    return
 end
 
 handler.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return handler
-

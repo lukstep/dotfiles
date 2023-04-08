@@ -46,20 +46,19 @@ return packer.startup(function(use)
     -- IDE
     use {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim',
-                      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
-                      'nvim-telescope/telescope-live-grep-args.nvim' } },
+        requires = { { 'nvim-lua/plenary.nvim',
+            { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+            'nvim-telescope/telescope-live-grep-args.nvim' } },
     }
     use "noib3/nvim-cokeline"
     use 'kazhala/close-buffers.nvim'
     use "kyazdani42/nvim-web-devicons"
     use {
-            "nvim-tree/nvim-tree.lua",
-            requires = {
-                "nvim-tree/nvim-web-devicons",
-            },
-            tag = "nightly"
+        "nvim-tree/nvim-tree.lua",
+        requires = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        tag = "nightly"
     }
     use "goolord/alpha-nvim"
     use "rcarriga/nvim-notify"
@@ -72,17 +71,17 @@ return packer.startup(function(use)
     use "willothy/flatten.nvim"
     use "folke/which-key.nvim"
 
-    -- GIT 
+    -- GIT
     use "lewis6991/gitsigns.nvim"
     use "akinsho/git-conflict.nvim"
 
     -- LSP
     use {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-            "neovim/nvim-lspconfig",
-            "glepnir/lspsaga.nvim"
-        }
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+        "glepnir/lspsaga.nvim"
+    }
     use "saadparwaiz1/cmp_luasnip"
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-nvim-lsp"

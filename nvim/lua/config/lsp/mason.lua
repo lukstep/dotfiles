@@ -1,6 +1,6 @@
 local status_ok, mason = pcall(require, "mason")
 if not status_ok then
-    vim.notify("Mason not found!" , "error", { title = "LSP" })
+    vim.notify("Mason not found!", "error", { title = "LSP" })
 end
 
 mason.setup({
@@ -15,7 +15,7 @@ mason.setup({
 
 local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not status_ok then
-    vim.notify("Mason-lspconfig not found!" , "error", { title = "LSP" })
+    vim.notify("Mason-lspconfig not found!", "error", { title = "LSP" })
 end
 
 mason_lspconfig.setup({
@@ -39,8 +39,7 @@ mason_lspconfig.setup_handlers({
             require("lspconfig")[server_name].setup(opts)
         else
             require("lspconfig")[server_name].setup(opts)
-            vim.notify({server_name .. " config not found!"}, "warn", {title = "LSP"})
+            vim.notify({ server_name .. " config not found!" }, "warn", { title = "LSP" })
         end
     end
 })
-

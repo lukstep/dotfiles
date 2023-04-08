@@ -1,12 +1,12 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then 
-    vim.notify("Cmp not found!" , "error", { title = "LSP" })
+if not cmp_status_ok then
+    vim.notify("Cmp not found!", "error", { title = "LSP" })
     return
 end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
-    vim.notify("Luasnip not found!" , "error", { title = "LSP" })
+    vim.notify("Luasnip not found!", "error", { title = "LSP" })
     return
 end
 
@@ -45,15 +45,15 @@ local kind_icons = {
     Operator = "",
     TypeParameter = "",
 }
- local border_thic = {
-     { "┏", "FloatBorder" },
-     { "━", "FloatBorder" },
-     { "┓", "FloatBorder" },
-     { "┃", "FloatBorder" },
-     { "┛", "FloatBorder" },
-     { "━", "FloatBorder" },
-     { "┗", "FloatBorder" },
-     { "┃", "FloatBorder" },
+local border_thic = {
+    { "┏", "FloatBorder" },
+    { "━", "FloatBorder" },
+    { "┓", "FloatBorder" },
+    { "┃", "FloatBorder" },
+    { "┛", "FloatBorder" },
+    { "━", "FloatBorder" },
+    { "┗", "FloatBorder" },
+    { "┃", "FloatBorder" },
 }
 
 local border_thin = {
@@ -75,7 +75,7 @@ cmp.setup {
     },
     mapping = {
         ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+        ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
         ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -108,7 +108,7 @@ cmp.setup {
                 cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
                 luasnip.jump(-1)
-             else
+            else
                 fallback()
             end
         end, {
@@ -144,7 +144,7 @@ cmp.setup {
         end
     },
     sources = {
-        { name = "nvim_lsp"},
+        { name = "nvim_lsp" },
         { name = "nvim_lua" },
         { name = "luasnip" },
         { name = "buffer" },
@@ -159,4 +159,3 @@ cmp.setup {
         native_menu = false,
     },
 }
-

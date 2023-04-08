@@ -1,19 +1,22 @@
 local status_ok, flatten = pcall(require, "flatten")
 if not status_ok then
-	vim.notify("Flatten can't be found", "error", { title = "Start-up" })
+    vim.notify("Flatten can't be found", "error", { title = "Start-up" })
     return
 end
 
 flatten.setup({
     callbacks = {
         -- Called when a request to edit file(s) is received
-        pre_open = function() end,
+        pre_open = function()
+        end,
         -- Called after a file is opened
         -- Passed the buf id, win id, and filetype of the new window
-        post_open = function(bufnr, winnr, filetype) end,
+        post_open = function(bufnr, winnr, filetype)
+        end,
         -- Called when a file is open in blocking mode, after it's done blocking
         -- (after bufdelete, bufunload, or quitpre for the blocking buffer)
-        block_end = function() end,
+        block_end = function()
+        end,
     },
     -- <String, Bool> dictionary of filetypes that should be blocking
     block_for = {
@@ -26,7 +29,7 @@ flatten.setup({
         -- tab            -> open in new tab
         -- split          -> open in split
         -- vsplit         -> open in vsplit
-        -- func(new_bufs) -> only open the files, allowing you to handle window opening yourself. 
+        -- func(new_bufs) -> only open the files, allowing you to handle window opening yourself.
         -- Argument is an array of buffer numbers representing the newly opened files.
         open = "tab",
         -- Affects which file gets focused when opening multiple at once
@@ -36,4 +39,3 @@ flatten.setup({
         focus = "first"
     }
 })
-

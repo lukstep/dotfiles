@@ -10,7 +10,8 @@ local diagnostics = {
     sections = { "error", "warn" },
     symbols = {
         error = " ",
-        warn = " " },
+        warn = " "
+    },
     colored = false,
     update_in_insert = false,
     always_visible = false,
@@ -20,9 +21,9 @@ local modified_icon = "●"
 local readonly_icon = ""
 
 local diff = {
-	"diff",
-	colored = false,
-	symbols = { added = " ", modified = " ", removed = " "},
+    "diff",
+    colored = false,
+    symbols = { added = " ", modified = " ", removed = " " },
     cond = hide_in_width
 }
 
@@ -65,10 +66,10 @@ local lsp = function()
 end
 
 local spaces = function()
-	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
-local clock = function ()
+local clock = function()
     local time = os.date('%H:%M:%S')
     return time
 end
@@ -99,8 +100,7 @@ lualine.setup({
         lualine_y = {},
         lualine_z = { "location", "progress" },
     },
-    extensions = {'nvim-tree', "toggleterm", "quickfix"}
-
+    extensions = { 'nvim-tree', "toggleterm", "quickfix" }
 })
 
 if _G.Statusline_timer == nil then
