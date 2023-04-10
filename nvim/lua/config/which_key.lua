@@ -59,7 +59,8 @@ wk.register({
                 N = { "<Plug>(git-conflict-none)", "Get none" },
                 p = { "<Plug>(git-conflict-prev-conflict)", "Go prev" },
                 n = { "<Plug>(git-conflict-next-conflict)", "Go next" }
-            }
+            },
+            v = { "<cmd>DiffviewFileHistory %<cr>", "Show current file diff"}
         },
         l = {
             name = "+LSP",

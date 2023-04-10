@@ -91,3 +91,14 @@ git_conflict.setup({
         current = 'DiffLine'
     }
 })
+
+local status_ok, diff_view = pcall(require, "diffview")
+if not status_ok then
+    vim.notify("Diffview not found!", "error", { title = "Start-up" })
+    return
+end
+
+diff_view.setup({
+    enhanced_diff_hl = true,
+    use_icons = true,
+})

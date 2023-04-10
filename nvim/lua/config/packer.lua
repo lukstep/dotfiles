@@ -74,7 +74,7 @@ return packer.startup(function(use)
     -- GIT
     use "lewis6991/gitsigns.nvim"
     use "akinsho/git-conflict.nvim"
-
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     -- LSP
     use {
         "williamboman/mason.nvim",
