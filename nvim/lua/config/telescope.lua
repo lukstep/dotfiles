@@ -6,6 +6,7 @@ end
 
 require("telescope").load_extension("live_grep_args")
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("harpoon")
 
 local actions = require("telescope.actions")
 local lga_actions = require("telescope-live-grep-args.actions")

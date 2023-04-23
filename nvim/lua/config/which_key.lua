@@ -65,7 +65,13 @@ wk.register({
                 p = { "<Plug>(git-conflict-prev-conflict)", "Go prev" },
                 n = { "<Plug>(git-conflict-next-conflict)", "Go next" }
             },
-            v = { "<cmd>DiffviewFileHistory %<cr>", "Show current file diff"}
+            v = { "<cmd>DiffviewFileHistory %<cr>", "Show current file diff" }
+        },
+        h = {
+            name = " Harpoon/Bookmarks",
+            h = { ":Telescope harpoon marks<cr>", "List" },
+            c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear all bookmarks" },
+            t = { ":lua require('harpoon.mark').add_file()<cr>", "Add bookmark" },
         },
         l = {
             name = " LSP",
