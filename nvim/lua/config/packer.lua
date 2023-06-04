@@ -41,8 +41,8 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
     -- Colors
-    use "cpea2506/one_monokai.nvim"
-
+    -- use "cpea2506/one_monokai.nvim"
+    use "rebelot/kanagawa.nvim"
     -- IDE
     use {
         'nvim-telescope/telescope.nvim',

@@ -7,7 +7,7 @@ end
 local get_hex = require("cokeline/utils").get_hex
 local space = { text = " " }
 
-vim.cmd([[hi TabLineFill guifg=none ctermfg=none guibg=none ctermbg=none gui=none cterm=none]])
+-- vim.cmd("hi TabLineFill gui=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE")
 
 cokeline.setup(
     {

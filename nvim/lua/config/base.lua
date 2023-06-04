@@ -1,6 +1,6 @@
 local options = {
     backup = false, -- Disable backup
-    background = 'dark',
+    -- background = '',
     backspace = 'start,eol,indent',
     clipboard = 'unnamedplus',            -- Allow Nvim to use system clipboard
     completeopt = { "menu", "noselect" }, -- For CMP

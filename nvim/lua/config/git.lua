@@ -86,10 +86,10 @@ if not status_ok then
 end
 
 git_conflict.setup({
-    highlights = {
-        incoming = 'DiffText',
-        current = 'DiffLine'
-    }
+    -- highlights = {
+    --     incoming = 'DiffText',
+    --     current = 'DiffLine'
+    -- }
 })
 
 local status_ok, diff_view = pcall(require, "diffview")

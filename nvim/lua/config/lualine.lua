@@ -77,7 +77,7 @@ end
 lualine.setup({
     options = {
         icons_enabled = true,
-        theme = "one_monokai",
+        theme = "kanagawa",
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
         globalstatus = true,
