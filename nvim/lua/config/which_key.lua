@@ -8,22 +8,73 @@ local g_expand = function()
     return '"' .. vim.fn.expand('<cword>') .. '"'
 end
 
+local keymap = vim.keymap.set
+
 wk.setup({
-    ignore_missing = true,
+    -- ignore_missing = true,
     icons = {
         breadcrumb = "»",
         separator = "➜",
         group = "",
     },
+    presets = {
+        motion = true
+    }
 })
+
+
+-- Remap space as leader key
+keymap("", "<Space>", "<Nop>")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+keymap("n", "+", "<C-a>")        -- Increment number
+keymap("n", "-", "<C-x>")        -- Decrement number
+keymap("n", "dw", 'vb"_d')       -- Delete word backwards
+keymap("n", "<C-a>", 'gg<S-v>G') -- Select all
+
+-- Better window navigation
+keymap("n", "<C-h>", "<C-w>h")
+keymap("n", "<C-j>", "<C-w>j")
+keymap("n", "<C-k>", "<C-w>k")
+keymap("n", "<C-l>", "<C-w>l")
+
+-- TERMINAL
+function _G.set_terminal_keymaps()
+    keymap('t', '<esc>', [[<C-\><C-n>]]) -- Exit insert mode in terminal
+    keymap('t', 'jk', [[<C-\><C-n>]])  -- Exit insert mode in terminal
+    keymap('t', '<C-h>', [[<C-\><C-n><C-W>h]])
+    keymap('t', '<C-j>', [[<C-\><C-n><C-W>j]])
+    keymap('t', '<C-k>', [[<C-\><C-n><C-W>k]])
+    keymap('t', '<C-l>', [[<C-\><C-n><C-W>l]])
+end
+
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+keymap("i", "jk", "<ESC>") -- Switch to normal mode
+
+keymap("v", "c", "y") -- Copy
+keymap("v", "x", "d") -- Cut
+keymap("v", "v", "p") -- Past
+
+keymap("x", "c", "y")                   -- Copy
+keymap("x", "x", "d")                   -- Cut
+keymap("x", "v", "p")                   -- Past
+keymap("x", "J", ":move '>+1<CR>gv-gv") -- Move block up
+keymap("x", "K", ":move '<-2<CR>gv-gv") -- Move block down
 
 wk.register({
     ["<leader>"] = {
-        -- keymap('n', '<Leader>p', '<Plug>(cokeline-switch-prev)')    -- Move buffer left
-        -- keymap('n', '<Leader>n', '<Plug>(cokeline-switch-next)')    -- Move buffer right
-        -- for i = 1,9 do
-        --   keymap('n', ('<Leader>%s'):format(i), ('<Plug>(cokeline-focus-%s)'):format(i))
-        -- end
+        ["1"] = { "<Plug>(cokeline-focus-1)", "Go to tab number 1" },
+        ["2"] = { "<Plug>(cokeline-focus-2)", "Go to tab number 2" },
+        ["3"] = { "<Plug>(cokeline-focus-3)", "Go to tab number 3" },
+        ["4"] = { "<Plug>(cokeline-focus-4)", "Go to tab number 4" },
+        ["5"] = { "<Plug>(cokeline-focus-5)", "Go to tab number 5" },
+        ["6"] = { "<Plug>(cokeline-focus-6)", "Go to tab number 6" },
+        ["7"] = { "<Plug>(cokeline-focus-7)", "Go to tab number 7" },
+        ["8"] = { "<Plug>(cokeline-focus-8)", "Go to tab number 8" },
+        ["9"] = { "<Plug>(cokeline-focus-9)", "Go to tab number 9" },
+        ["0"] = { "<Plug>(cokeline-focus-10)", "Go to tab number 10" },
         d = {
             name = " Diagnostic",
             n = { ":lua vim.diagnostic.goto_next()<cr>", "Next diagnostic" },
@@ -88,13 +139,18 @@ wk.register({
             t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type definition" },
             w = { ":%s/\\s\\+$//e<cr>", "Trim trailing whitespace" },
         },
+        n = { "<Plug>(cokeline-switch-prev)" , "Move tab left"},
+        p = { "<Plug>(cokeline-switch-next)", "Move tab right"},
         t = {
             name = " Terminal",
             g = { "<cmd>lua _TIG_TOGGLE()<cr>", "Toggle Tig terminal" },
             p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Toggle Python terminal" },
             t = { "<cmd>ToggleTerm()<cr>", "Toggle Terminal" }
         },
-        q = { "<CMD>BDelete this<cr>", "Close current buffer" }
-
-    }
+        q = { "<CMD>BDelete this<cr>", "Close current buffer" },
+    },
+    ["<S-Tab>"]  = { "<Plug>(cokeline-focus-prev)", "Prev buffer" },
+    ["<Tab>"] = { "<Plug>(cokeline-focus-next)",    "Next buffer" },
 })
+
+
