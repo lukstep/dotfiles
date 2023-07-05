@@ -50,7 +50,10 @@ return packer.startup(function(use)
             { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
             'nvim-telescope/telescope-live-grep-args.nvim' } },
     }
-    use "noib3/nvim-cokeline"
+    use {
+        "noib3/nvim-cokeline",
+        tag = "v0.4.0"
+    }
     use 'kazhala/close-buffers.nvim'
     use "kyazdani42/nvim-web-devicons"
     use {

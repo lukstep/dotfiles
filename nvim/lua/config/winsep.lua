@@ -6,6 +6,6 @@ end
 
 winsep.setup({
     highlight = {
-        fg = "#88B966",
+        fg = "#98BB6C",
     }
 })

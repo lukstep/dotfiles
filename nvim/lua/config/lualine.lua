@@ -62,7 +62,7 @@ local lsp = function()
     for i, lsp_server in pairs(vim.lsp.buf_get_clients(0)) do
         table.insert(names, lsp_server.name)
     end
-    return "LSP [" .. table.concat(names, " ") .. "]"
+    return "LSP [" .. table.concat(names, " ") .. "]"
 end
 
 local spaces = function()

@@ -40,7 +40,7 @@ cokeline.setup(
                     return buffer.index .. ": "
                 end,
                 fg = function(buffer)
-                    return "#e5c463"
+                    return "C8C093"
                 end
             },
             {
@@ -57,13 +57,13 @@ cokeline.setup(
                 end,
                 fg = function(buffer)
                     if buffer.is_modified then
-                        return "#e5c463"
+                        return "#DCA561"
                     end
                     if buffer.diagnostics.errors ~= 0 then
-                        return "#fc5d7c"
+                        return "#C34043"
                     end
                     if buffer.is_focused then
-                        return "#88B966"
+                        return "#98BB6C"
                     end
                 end,
                 style = function(buffer)
