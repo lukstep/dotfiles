@@ -52,7 +52,7 @@ return packer.startup(function(use)
     }
     use {
         "noib3/nvim-cokeline",
-        tag = "v0.4.0"
+        branch = "main"
     }
     use 'kazhala/close-buffers.nvim'
     use "kyazdani42/nvim-web-devicons"

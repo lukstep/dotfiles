@@ -40,7 +40,7 @@ cokeline.setup(
                     return buffer.index .. ": "
                 end,
                 fg = function(buffer)
-                    return "C8C093"
+                    return "#C8C093"
                 end
             },
             {
