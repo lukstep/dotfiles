@@ -3,17 +3,14 @@ if not status_ok then
     vim.notify("Cokeline not found!", "error", { title = "Start-up" })
     return
 end
-
-local get_hex = require("cokeline/utils").get_hex
+local hlgroups = require("cokeline.hlgroups")
 local space = { text = " " }
-
--- vim.cmd("hi TabLineFill gui=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE")
 
 cokeline.setup(
     {
         default_hl = {
             fg = function(buffer)
-                return buffer.is_focused and nil or get_hex("Comment", "fg")
+                return buffer.is_focused and nil or hlgroups.get_hl_attr("Comment", "fg")
             end,
             bg = "none",
         },
@@ -28,7 +25,7 @@ cokeline.setup(
                 {
                     text = '  NvimTree',
                     fg = "grey",
-                    bg = get_hex('NvimTreeNormal', 'bg'),
+                    bg = hlgroups.get_hl_attr('NvimTreeNormal', 'bg'),
                     style = 'bold',
                 },
             }
