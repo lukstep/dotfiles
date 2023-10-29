@@ -63,3 +63,13 @@ vim.api.nvim_create_user_command("FileAbsolutePath", function()
     vim.fn.setreg("+", path)
     vim.notify('Copied "' .. path .. '"')
 end, {})
+
+
+function load_plugin(plugin_name)
+    local status_ok, plugin = pcall(require, plugin_name)
+    if not status_ok then
+        vim.notify(plugin_name + " not found!", "error", { title = "Start-up" })
+        return nil
+    end
+    return plugin
+end

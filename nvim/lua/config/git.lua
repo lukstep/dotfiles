@@ -1,10 +1,9 @@
-local status_ok, gitsigns = pcall(require, "gitsigns")
-if not status_ok then
-    vim.notify("Gitsigns not found!", "error", { title = "Start-up" })
+local git_signs = load_plugin("gitsigns")
+if not git_signs then
     return
 end
 
-gitsigns.setup {
+git_signs.setup({
     signs = {
         add = {
             hl = "GitSignsAdd",
@@ -20,13 +19,13 @@ gitsigns.setup {
         },
         delete = {
             hl = "GitSignsDelete",
-            text = "契",
+            text = " ",
             numhl = "GitSignsDeleteNr",
             linehl = "GitSignsDeleteLn"
         },
         topdelete = {
             hl = "GitSignsDelete",
-            text = "契",
+            text = " ",
             numhl = "GitSignsDeleteNr",
             linehl = "GitSignsDeleteLn"
         },
@@ -59,7 +58,7 @@ gitsigns.setup {
         delay = 800,
         ignore_whitespace = false,
     },
-    current_line_blame_formatter = '  <author>, <author_time:%R> - <summary>',
+    current_line_blame_formatter = '  <author>, <author_time:%R> - <summary>',
     current_line_blame_formatter_opts = {
         relative_time = true,
     },
@@ -77,24 +76,16 @@ gitsigns.setup {
     yadm = {
         enable = false,
     },
-}
-
-local status_ok, git_conflict = pcall(require, "git-conflict")
-if not status_ok then
-    vim.notify("Git-conflict not found!", "error", { title = "Start-up" })
-    return
-end
-
-git_conflict.setup({
-    -- highlights = {
-    --     incoming = 'DiffText',
-    --     current = 'DiffLine'
-    -- }
 })
 
-local status_ok, diff_view = pcall(require, "diffview")
-if not status_ok then
-    vim.notify("Diffview not found!", "error", { title = "Start-up" })
+local git_conflict = load_plugin("git-conflict")
+if not git_conflict then
+    return
+end
+git_conflict.setup()
+
+local diff_view = load_plugin("diffview")
+if not diff_view then
     return
 end
 
