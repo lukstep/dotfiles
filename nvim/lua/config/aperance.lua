@@ -1,8 +1,6 @@
-colorscheme = "kanagawa"
-
-local present, colorscheme_plugin = pcall(require, colorscheme)
-if not present then
-    vim.notify({ "Colorscheme " .. colorscheme .. " not found!" }, "error", { title = "Start-up" })
+local colorscheme = "kanagawa"
+local colorscheme_plugin = load_plugin(colorscheme)
+if not colorscheme_plugin then
     return
 end
 
@@ -10,7 +8,7 @@ colorscheme_plugin.setup({
     compile = true,
     commentStyle = { italic = true },
     transparent = false,
-    -- theme = "dragon",
+    theme = "dragon",
     overrides = function(colors)
         local theme = colors.theme
         return {
@@ -51,3 +49,26 @@ colorscheme_plugin.setup({
 
 vim.cmd("colorscheme kanagawa-wave")
 vim.cmd("KanagawaCompile")
+
+local window_separator = load_plugin("colorful-winsep")
+if not window_separator then
+    return
+end
+
+window_separator.setup({
+    highlight = {
+        fg = "#98BB6C",
+    }
+})
+
+local notify = load_plugin("notify")
+if not notify then
+    return
+end
+
+notify.setup({
+    background_colour = "#00000"
+})
+
+vim.notify = notify
+
