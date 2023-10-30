@@ -4,6 +4,15 @@ if not colorscheme_plugin then
     return
 end
 
+COLORS = {
+    buffer_index = "#C8C093",
+    focused_buffer = "#76946A",
+    error_buffer = "#C34043",
+    unsave_buffer = "#DCA561",
+    window_separator = "#98BB6C",
+    transparent = "#000000"
+}
+
 colorscheme_plugin.setup({
     compile = true,
     commentStyle = { italic = true },
@@ -57,7 +66,7 @@ end
 
 window_separator.setup({
     highlight = {
-        fg = "#98BB6C",
+        fg = COLORS.window_separator
     }
 })
 
@@ -67,7 +76,7 @@ if not notify then
 end
 
 notify.setup({
-    background_colour = "#00000"
+    background_colour = COLORS.transparent
 })
 
 vim.notify = notify
