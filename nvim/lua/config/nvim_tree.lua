@@ -1,11 +1,5 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
-    vim.notify("Telescope not found!", "error", { title = "Start-up" })
-    return
-end
-
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
+local nvim_tree = load_plugin("nvim-tree")
+if not nvim_tree then
     return
 end
 
@@ -22,23 +16,23 @@ nvim_tree.setup({
         icons = {
             git_placement = "after",
             glyphs = {
-                default = "",
-                symlink = "",
+                default = "󰈔",
+                symlink = "󱀱",
                 git = {
-                    unstaged = "ﱤ",
-                    staged = "ﱣ",
+                    unstaged = "󰝦",
+                    staged = "󰝥",
                     unmerged = "",
-                    renamed = "",
-                    deleted = "ﮁ",
+                    renamed = "󱖘",
+                    deleted = "󰮈",
                     untracked = "U",
                     ignored = "",
                 },
                 folder = {
-                    default = "",
-                    open = "",
-                    empty = "",
-                    empty_open = "",
-                    symlink = "",
+                    default = "󰉋",
+                    open = "󰝰",
+                    empty = "󰉖",
+                    empty_open = "󰷏",
+                    symlink = "󱉆",
                 }
             },
             show = {
