@@ -19,6 +19,9 @@ wk.setup({
     },
     presets = {
         motion = true
+    },
+    window = {
+        border = "single",
     }
 })
 
@@ -125,7 +128,7 @@ wk.register({
             t = { ":lua require('harpoon.mark').add_file()<cr>", "Add bookmark" },
         },
         l = {
-            name = " LSP",
+            name = " LSP",
             a = { "<cmd>Lspsaga code_action<cr>", "Code action" },
             d = { ":lua vim.lsp.buf.definition()<cr>", "Go to definition" },
             D = { ":lua vim.lsp.buf.declaration()<cr>", "Go to declaration" },
