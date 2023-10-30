@@ -1,6 +1,5 @@
-local status_ok, lualine = pcall(require, "lualine")
-if not status_ok then
-    vim.notify("Lualine not found!", "error", { title = "Start-up" })
+local lualine = load_plugin("lualine")
+if not lualine then
     return
 end
 
@@ -17,13 +16,10 @@ local diagnostics = {
     always_visible = false,
 }
 
-local modified_icon = "●"
-local readonly_icon = ""
-
 local diff = {
     "diff",
     colored = false,
-    symbols = { added = " ", modified = " ", removed = " " },
+    symbols = { added = " ", modified = " ", removed = " " },
     cond = hide_in_width
 }
 
@@ -31,6 +27,9 @@ local filetype = {
     "filetype",
     incons_enabled = true
 }
+
+local modified_icon = ""
+local readonly_icon = ""
 
 local inactive_path = {
     "filename",
@@ -62,6 +61,9 @@ local lsp = function()
     for i, lsp_server in pairs(vim.lsp.buf_get_clients(0)) do
         table.insert(names, lsp_server.name)
     end
+    if next(names) == nil then
+        return "None LSP servers 󰱶"
+    end
     return "LSP [" .. table.concat(names, " ") .. "]"
 end
 
@@ -89,8 +91,8 @@ lualine.setup({
         lualine_b = { "branch", diff, diagnostics },
         lualine_c = { path },
         lualine_x = { lsp, filetype },
-        lualine_y = { spaces, "encoding", "fileformat" },
-        lualine_z = { "location", "progress", clock },
+        lualine_y = { "encoding", "fileformat", "filesize" },
+        lualine_z = { clock },
     },
     inactive_sections = {
         lualine_a = {},

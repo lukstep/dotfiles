@@ -1,8 +1,8 @@
-local status_ok, cokeline = pcall(require, "cokeline")
-if not status_ok then
-    vim.notify("Cokeline not found!", "error", { title = "Start-up" })
+local cokeline = load_plugin("cokeline")
+if not cokeline then
     return
 end
+
 local hlgroups = require("cokeline.hlgroups")
 local space = { text = " " }
 
