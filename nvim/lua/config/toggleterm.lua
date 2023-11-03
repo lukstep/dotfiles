@@ -1,6 +1,5 @@
-local status_ok, toggleterm = pcall(require, "toggleterm")
-if not status_ok then
-    vim.notify("Toggleterm can't be found", "error", { title = "Start-up" })
+local toggleterm = load_plugin("toggleterm")
+if not toggleterm then
     return
 end
 

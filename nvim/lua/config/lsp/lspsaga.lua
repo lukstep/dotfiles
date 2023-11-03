@@ -1,6 +1,6 @@
-local status_ok, lspsaga = pcall(require, "lspsaga")
-if not status_ok then
-    vim.notify("Lspsaga not found!", "error", { title = "Start-up" })
+local lspsaga = load_plugin("lspsaga")
+if not lspsaga then
+    return
 end
 
 lspsaga.setup({

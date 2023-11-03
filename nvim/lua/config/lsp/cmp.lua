@@ -1,12 +1,10 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-    vim.notify("Cmp not found!", "error", { title = "LSP" })
+local cmp = load_plugin("cmp")
+if not cmp then
     return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-    vim.notify("Luasnip not found!", "error", { title = "LSP" })
+local luasnip = load_plugin("luasnip")
+if not luasnip then
     return
 end
 

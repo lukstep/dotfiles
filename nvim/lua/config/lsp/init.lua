@@ -1,6 +1,6 @@
-local status_ok, lsp = pcall(require, "lspconfig")
-if not status_ok then
-    vim.notify("Lspconfig not found!", "error", { title = "Start-up" })
+local lsp = load_plugin("lspconfig")
+if not lsp then
+    return
 end
 
 require("config.lsp.mason")

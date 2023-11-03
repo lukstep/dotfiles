@@ -1,6 +1,5 @@
-local status_ok, wk = pcall(require, "which-key")
-if not status_ok then
-    vim.notify("Which-key can't be found", "error", { title = "Start-up" })
+local wk = load_plugin("which-key")
+if not wk then
     return
 end
 

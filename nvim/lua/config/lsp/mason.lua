@@ -1,6 +1,6 @@
-local status_ok, mason = pcall(require, "mason")
-if not status_ok then
-    vim.notify("Mason not found!", "error", { title = "LSP" })
+local mason = load_plugin("mason")
+if not mason then
+    return
 end
 
 mason.setup({
@@ -13,9 +13,9 @@ mason.setup({
     }
 })
 
-local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not status_ok then
-    vim.notify("Mason-lspconfig not found!", "error", { title = "LSP" })
+local mason_lspconfig = load_plugin("mason-lspconfig")
+if not mason_lspconfig then
+    return
 end
 
 mason_lspconfig.setup({

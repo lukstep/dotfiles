@@ -1,6 +1,5 @@
-local status_ok, flatten = pcall(require, "flatten")
-if not status_ok then
-    vim.notify("Flatten can't be found", "error", { title = "Start-up" })
+local flatten = load_plugin("flatten")
+if not flatten then
     return
 end
 

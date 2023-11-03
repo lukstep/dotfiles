@@ -1,6 +1,5 @@
-local present, telescope = pcall(require, "telescope")
-if not present then
-    vim.notify("Telescope not found!", "error", { title = "Start-up" })
+local telescope = load_plugin("telescope")
+if not telescope then
     return
 end
 
