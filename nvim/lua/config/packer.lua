@@ -63,6 +63,7 @@ return packer.startup(function(use)
         },
         tag = "nightly"
     }
+    use "s1n7ax/nvim-window-picker"
     use "goolord/alpha-nvim"
     use "rcarriga/nvim-notify"
     use "numToStr/Comment.nvim"
