@@ -50,7 +50,11 @@ cokeline.setup(
             },
             {
                 text = function(buffer)
-                    return buffer.unique_prefix .. buffer.filename
+                    local base = buffer.unique_prefix .. buffer.filename
+                    if buffer.is_focused then
+                        return " " .. base
+                    end
+                    return base
                 end,
                 fg = function(buffer)
                     if buffer.is_modified then
