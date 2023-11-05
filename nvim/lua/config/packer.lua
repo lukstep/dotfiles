@@ -85,7 +85,7 @@ return packer.startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
-        "glepnir/lspsaga.nvim"
+        "nvimdev/lspsaga.nvim"
     }
     use "saadparwaiz1/cmp_luasnip"
     use "hrsh7th/nvim-cmp"
