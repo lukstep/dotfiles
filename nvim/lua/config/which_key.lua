@@ -108,6 +108,7 @@ wk.register({
         g = {
             name = " Git",
             s = { "<cmd>Telescope git_status<cr>", "Git status" },
+            S = { "<cmd>Easypick diff_current_branch<cr>", "Diff current branch"},
             c = {
                 name = "+Git conflicts",
                 l = { "<cmd>GitConflictListQf<cr>", "Conflicts list" },

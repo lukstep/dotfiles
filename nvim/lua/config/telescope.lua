@@ -117,3 +117,20 @@ function TelescopeFindWordInBuild(word)
     require('telescope').extensions.live_grep_args.live_grep_args({
         default_text = '"' .. word .. '"' .. " ./build" })
 end
+
+local easypick = load_plugin("easypick")
+if not easypick then
+    return
+end
+
+local base_branch = "main"
+easypick.setup({
+    pickers = {
+        {
+            name = "diff_current_branch",
+            command = "git diff --name-only $(git merge-base HEAD " .. base_branch .. " )",
+            previewer = easypick.previewers.branch_diff({base_branch = base_branch})
+        },
+    }
+})
+

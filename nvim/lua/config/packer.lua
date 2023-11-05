@@ -50,6 +50,7 @@ return packer.startup(function(use)
             { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
             'nvim-telescope/telescope-live-grep-args.nvim' } },
     }
+    use {'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim'}
     use {
         "noib3/nvim-cokeline",
         branch = "main"
