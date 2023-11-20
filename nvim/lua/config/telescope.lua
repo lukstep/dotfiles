@@ -82,7 +82,7 @@ telescope.setup({
         live_grep_args = {
             auto_quoting = false,
             mappings = {
-                             -- extend mappings
+                -- extend mappings
                 i = {
                 },
                 n = {
@@ -129,8 +129,18 @@ easypick.setup({
         {
             name = "diff_current_branch",
             command = "git diff --name-only $(git merge-base HEAD " .. base_branch .. " )",
-            previewer = easypick.previewers.branch_diff({base_branch = base_branch})
+            previewer = easypick.previewers.branch_diff({ base_branch = base_branch })
         },
+        {
+            name = "conflicts",
+            command = "git diff --name-only --diff-filter=U --relative",
+            previewer = easypick.previewers.file_diff()
+        },
+        {
+            name = "status",
+            command = "git diff --name-only --relative",
+            previewer = easypick.previewers.file_diff()
+        }
+
     }
 })
-
