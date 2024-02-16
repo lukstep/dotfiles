@@ -11,18 +11,19 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+#Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 CASE_SENSITIVE="false"
 DISABLE_AUTO_TITLE="false"
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
-HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 7
 
-plugins=(docker
+plugins=(
     git
     fzf
     tmux
@@ -37,7 +38,9 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-source $ZSH/oh-my-zsh.sh
+# Brew completion
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 
 # User configuration
 
@@ -59,7 +62,7 @@ alias ll="ls -la"
 alias gs="git status"
 alias gb="git branch"
 
-#NVIM flatten config
+# Nvim flatten config
 export VISUAL="nvim --cmd 'let g:flatten_wait=1'"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
