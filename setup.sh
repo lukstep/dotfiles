@@ -26,4 +26,4 @@ ln -s $PWD/htop/ $HOME/.config/htop
 # Install package using brew
 brew tap homebrew/cask-fonts
 brew install --cask font-victor-mono-nerd-font iterm2 miniconda
-brew install fzf ripgrep neovim tmux tree-sitter htop tig
+brew install fzf ripgrep neovim tmux tree-sitter htop tig conda-zsh-completion
