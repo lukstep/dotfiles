@@ -1,0 +1,16 @@
+tap "homebrew/cask-fonts"
+
+cask "font-victor-mono-nerd-font"
+cask "iterm2"
+cask "miniconda"
+
+brew "fzf"
+brew "ripgrep"
+brew "neovim"
+brew "tmux"
+brew "tree-sitter"
+brew "htop"
+brew "tig"
+brew "conda-zsh-completion"
+brew "wget"
+brew "rust"

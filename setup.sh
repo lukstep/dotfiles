@@ -12,21 +12,20 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 # Make .zshrc backup and simlink
 mv ~/.zshrc ~/.zshrc.bak
+rm -rf ~/.zshrc
 ln -s $PWD/.zshrc $HOME/.zshrc
 
 # Nvim config
 ln -s $PWD/nvim/ $HOME/.config/nvim
 
-# htop config
+# Htop config
 ln -s $PWD/htop/ $HOME/.config/htop
 
 # Homebrew install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install package using brew
-brew tap homebrew/cask-fonts
-brew install --cask font-victor-mono-nerd-font iterm2 miniconda
-brew install fzf ripgrep neovim tmux tree-sitter htop tig conda-zsh-completion wget
+brew bundle install
 
 # Download iterm2 themes
 wget https://raw.githubusercontent.com/rebelot/kanagawa.nvim/master/extras/kanagawa_dragon.itermcolors
