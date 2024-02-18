@@ -5,6 +5,8 @@ cask "iterm2"
 cask "miniconda"
 
 brew "fzf"
+brew "git"
+brew "git-lfs"
 brew "ripgrep"
 brew "neovim"
 brew "tmux"
