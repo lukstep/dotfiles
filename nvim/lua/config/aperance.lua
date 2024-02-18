@@ -1,4 +1,5 @@
 local colorscheme = "kanagawa"
+local colorscheme_variant = "dragon"
 local colorscheme_plugin = load_plugin(colorscheme)
 if not colorscheme_plugin then
     return
@@ -17,7 +18,7 @@ colorscheme_plugin.setup({
     compile = true,
     commentStyle = { italic = true },
     transparent = false,
-    theme = "dragon",
+    theme = colorscheme_variant,
     overrides = function(colors)
         local theme = colors.theme
         return {
@@ -56,7 +57,7 @@ colorscheme_plugin.setup({
     end,
 })
 
-vim.cmd("colorscheme kanagawa-wave")
+vim.cmd(("colorscheme kanagawa-" .. colorscheme_variant))
 vim.cmd("KanagawaCompile")
 
 local window_separator = load_plugin("colorful-winsep")
