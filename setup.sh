@@ -26,4 +26,8 @@ ln -s $PWD/htop/ $HOME/.config/htop
 # Install package using brew
 brew tap homebrew/cask-fonts
 brew install --cask font-victor-mono-nerd-font iterm2 miniconda
-brew install fzf ripgrep neovim tmux tree-sitter htop tig conda-zsh-completion
+brew install fzf ripgrep neovim tmux tree-sitter htop tig conda-zsh-completion wget
+
+# Download iterm2 themes
+wget https://raw.githubusercontent.com/rebelot/kanagawa.nvim/master/extras/kanagawa_dragon.itermcolors
+wget https://github.com/rebelot/kanagawa.nvim/blob/master/extras/kanagawa.itermcolors
