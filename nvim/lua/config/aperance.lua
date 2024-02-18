@@ -1,5 +1,5 @@
 local colorscheme = "kanagawa"
-local colorscheme_variant = "dragon"
+local colorscheme_variant = "wave"
 local colorscheme_plugin = load_plugin(colorscheme)
 if not colorscheme_plugin then
     return
