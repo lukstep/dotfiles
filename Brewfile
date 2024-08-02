@@ -6,6 +6,7 @@ cask "miniconda"
 cask "mactex"
 cask "docker"
 cask "visual-studio-code"
+cask "wezterm"
 
 brew "cmake"
 brew "llvm"

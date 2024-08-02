@@ -30,3 +30,6 @@ brew bundle install
 # Download iterm2 themes
 wget https://raw.githubusercontent.com/rebelot/kanagawa.nvim/master/extras/kanagawa_dragon.itermcolors
 wget https://github.com/rebelot/kanagawa.nvim/blob/master/extras/kanagawa.itermcolors
+
+# Wezterm config
+ln -s $PWD/.wezterm.lua $HOME/.wezterm.lua
